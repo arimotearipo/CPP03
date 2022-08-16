@@ -10,7 +10,7 @@ class ScavTrap : public ClapTrap
 	public:
 		ScavTrap(void);
 		ScavTrap(string name);
-		~ScavTrap(void);
+	 	~ScavTrap(void);
 		ScavTrap(ScavTrap const &tocopy);
 		ScavTrap &operator=(ScavTrap const &toassign);
 

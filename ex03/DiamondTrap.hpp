@@ -5,13 +5,14 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	DiamondTrap(void);
-	DiamondTrap(string name);
-	~DiamondTrap(void);
-	DiamondTrap(DiamondTrap const &tocopy);
-	DiamondTrap	&operator=(DiamondTrap const &toassign);
+	public:
+		DiamondTrap(void);
+		DiamondTrap(string name);
+		~DiamondTrap(void);
+		DiamondTrap(DiamondTrap const &tocopy);
+		DiamondTrap	&operator=(DiamondTrap const &toassign);
 
 	private:
 		string	_dtname;

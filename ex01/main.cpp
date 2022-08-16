@@ -7,9 +7,11 @@ using std::endl;
 
 int	main(void)
 {
-	ClapTrap	clap("clap");
-	ScavTrap	scav("scav");
+	// ClapTrap	clap("clap");
+	ClapTrap	*scav = new ScavTrap("scav");
 
-	cout << "hp" << scav.getHP() << endl << "ep" << scav.getEP() << endl << "att" << scav.getAtt() << endl;
+	// cout << "hp" << scav.getHP() << endl << "ep" << scav.getEP() << endl << "att" << scav.getAtt() << endl;
+	delete scav;
+	// system("leaks ClapTrap");
 	return (0);
 }

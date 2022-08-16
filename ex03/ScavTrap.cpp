@@ -47,7 +47,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &toassign)
 //messages
 void	ScavTrap::introMsg(void)
 {
-	cout << "Me am " << this->_name << ". A strong ScavTrap" << endl;
+	cout << RED << "Me am " << this->_name << ". A strong ScavTrap" << COLOR_RESET << endl;
 }
 
 void	ScavTrap::attMsg(string &target)

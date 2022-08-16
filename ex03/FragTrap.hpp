@@ -3,7 +3,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap(void);
@@ -18,6 +18,10 @@ class FragTrap : public ClapTrap
 		//messages end
 
 		void	highFiveGuys(void);
+
+	protected:
+		int		_hp;
+		int		_attack_dmg;
 };
 
 #endif

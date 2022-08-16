@@ -4,6 +4,9 @@ using std::string;
 using std::cout;
 using std::endl;
 
+#define RED "\e[0;31m"
+#define RESET "\e[0m"
+
 ScavTrap::ScavTrap(void)
 {
 	this->_name = "unknown ScavTrap";
@@ -57,7 +60,7 @@ void	ScavTrap::attMsg(string &target)
 
 void	ScavTrap::byeMsg(void)
 {
-	cout << "This is goodbye from " << this->_name << endl;
+	cout << RED <<"This is goodbye from " << this->_name << RESET << endl;
 }
 //messages end
 

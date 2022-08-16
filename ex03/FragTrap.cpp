@@ -10,12 +10,13 @@ FragTrap::FragTrap(void)
 	this->_hp = 100;
 	this->_ep = 100;
 	this->_att = 30;
-	this->introMsg();
+	this->introMsg(); 
 }
 
 FragTrap::FragTrap(string name)
 {
 	this->_name = name;
+	// ClapTrap::_hp = 100;
 	this->_hp = 100;
 	this->_ep = 100;
 	this->_att = 30;
@@ -47,7 +48,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &toassign)
 //messages
 void	FragTrap::introMsg(void)
 {
-	cout << "Checking in is " << this->_name << ". A FragTrap." << endl;
+	cout << RED << "Checking in is " << this->_name << ". A FragTrap." << COLOR_RESET << endl;
 }
 
 void	FragTrap::byeMsg(void)

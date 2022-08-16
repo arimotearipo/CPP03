@@ -6,7 +6,7 @@ using std::endl;
 
 ClapTrap::ClapTrap(void) : _name("unknown"), _hp(10), _ep(10), _att(10)
 {
-	cout << "A ClapTrap-like machine is built" << endl;
+	cout << RED << "A ClapTrap-like machine is built" << COLOR_RESET << endl;
 }
 
 ClapTrap::ClapTrap(string name) : _hp(10), _ep(10), _att(10)
@@ -37,7 +37,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap &toassign)
 //messages
 void	ClapTrap::introMsg(void)
 {
-	cout << "Hi, my name is " << this->_name << ". I'm a ClapTrap" << endl;
+	cout << RED << "Hi, my name is " << this->_name << ". I'm a ClapTrap" << COLOR_RESET << endl;
 }
 
 void	ClapTrap::attMsg(string &target)
