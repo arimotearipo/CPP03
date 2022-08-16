@@ -4,10 +4,15 @@ using std::string;
 using std::cout;
 using std::endl;
 
+ClapTrap::ClapTrap(void) : _name("unknown"), _hp(10), _ep(10), _att(10)
+{
+	this->introMsg();
+}
+
 ClapTrap::ClapTrap(string name) : _hp(10), _ep(10), _att(10)
 {
 	_name = name;
-	cout << name << " created!" << endl;
+	this->introMsg();
 }
 
 ClapTrap::~ClapTrap(void)
@@ -22,45 +27,54 @@ ClapTrap::ClapTrap(ClapTrap &tocopy)
 
 ClapTrap	&ClapTrap::operator=(ClapTrap &toassign)
 {
-	this->_name = toassign.getName();
-	this->_hp = toassign.getHP();
-	this->_ep = toassign.getEP();
-	this->_att = toassign.getAtt();
+	this->_name = toassign._name;
+	this->_hp = toassign._hp;
+	this->_ep = toassign._ep;
+	this->_att = toassign._att;
 	return (*this);
 }
 
+void	ClapTrap::introMsg(void)
+{
+	cout << "Hi, my name is " << this->_name << ". I'm a ClapTrap" << endl;
+}
+
 //getters
-string		ClapTrap::getName(void)
+string	ClapTrap::getName(void)
 {
 	return (this->_name);
 }
 
-int			ClapTrap::getHP(void)
+int		ClapTrap::getHP(void)
 {
 	return (this->_hp);
 }
 
-int			ClapTrap::getEP(void)
+int		ClapTrap::getEP(void)
 {
 	return (this->_ep);
 }
 
-int			ClapTrap::getAtt(void)
+int		ClapTrap::getAtt(void)
 {
 	return (this->_att);
 }
+//getters end
+
+//setters
+//setters end
 
 void	ClapTrap::attack(string &target)
 {
 	if (this->tiredOrDied())
 		return ;
-	cout << this->getName() << " attacks " << target << " and inflicts " << this->_att << " damage" << endl;
+	cout << this->_name << " attacks " << target << " and inflicts " << this->_att << " damage" << endl;
 	this->_ep -= 1;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	cout << this->getName() << " has taken " << amount << " damage" << endl;
+	cout << this->_name << " has taken " << amount << " damage" << endl;
 	if (amount >= this->_hp)
 	{
 		cout << this->_name << " received the killing blow" << endl;
@@ -72,7 +86,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->tiredOrDied())
 		return ;
-	cout << this->getName() << " repaired itself" << endl;
+	cout << this->_name << " repaired itself" << endl;
 	this->_hp += amount;
 	this->_ep -= 1;
 }

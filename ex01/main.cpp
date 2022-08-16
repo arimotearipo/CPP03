@@ -1,4 +1,5 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 using std::string;
 using std::cout;
@@ -6,23 +7,9 @@ using std::endl;
 
 int	main(void)
 {
-	ClapTrap	yellowbox("Yellowbox");
-	string		enemy("redbox");
+	ClapTrap	clap("clap");
+	ScavTrap	scav("scav");
 
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.attack(enemy);
-	yellowbox.takeDamage(5);
-	yellowbox.beRepaired(3);
-	yellowbox.takeDamage(10);
+	cout << "hp" << scav.getHP() << endl << "ep" << scav.getEP() << endl << "att" << scav.getAtt() << endl;
 	return (0);
 }
