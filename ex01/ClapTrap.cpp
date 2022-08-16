@@ -6,7 +6,7 @@ using std::endl;
 
 ClapTrap::ClapTrap(void) : _name("unknown"), _hp(10), _ep(10), _att(10)
 {
-	this->introMsg();
+	cout << "A ClapTrap-like machine is built" << endl;
 }
 
 ClapTrap::ClapTrap(string name) : _hp(10), _ep(10), _att(10)
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(string name) : _hp(10), _ep(10), _att(10)
 
 ClapTrap::~ClapTrap(void)
 {
-	cout << _name << " destroyed" << endl;
+	cout << this->_name << ", a ClapTrap-like machine is destroyed" << endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &tocopy)
