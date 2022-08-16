@@ -26,10 +26,10 @@ class	ClapTrap
 		void	beRepaired(unsigned int amount);
 	private:
 		string	_name;
-		int		_hp = 10;
-		int		_ep = 10;
-		int		_att = 0;
+		unsigned int		_hp = 10;
+		unsigned int		_ep = 10;
+		unsigned int		_att = 0;
 
-}
+};
 
 #endif
