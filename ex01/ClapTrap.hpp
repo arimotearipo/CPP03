@@ -24,11 +24,12 @@ class	ClapTrap
 		void	attack(string &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		bool	tiredOrDied(void);
 	private:
 		string	_name;
-		unsigned int		_hp = 10;
-		unsigned int		_ep = 10;
-		unsigned int		_att = 0;
+		int		_hp;
+		int		_ep;
+		int		_att;
 
 };
 

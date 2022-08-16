@@ -10,10 +10,19 @@ int	main(void)
 	string		enemy("redbox");
 
 	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
+	yellowbox.attack(enemy);
 	yellowbox.takeDamage(5);
 	yellowbox.beRepaired(3);
 	yellowbox.takeDamage(10);
-	cout << "hp " << yellowbox.getHP() << endl;
-	yellowbox.attack(enemy);
 	return (0);
 }
