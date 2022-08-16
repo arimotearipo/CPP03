@@ -34,10 +34,22 @@ ClapTrap	&ClapTrap::operator=(ClapTrap &toassign)
 	return (*this);
 }
 
+//messages
 void	ClapTrap::introMsg(void)
 {
 	cout << "Hi, my name is " << this->_name << ". I'm a ClapTrap" << endl;
 }
+
+void	ClapTrap::attMsg(string &target)
+{
+	cout << this->_name << "attacks " << target << " and inflected " << this->_att << " damage!" << endl;
+}
+
+void	ClapTrap::byeMsg(void)
+{
+	cout << this->_name << " signing off" << endl;
+}
+//messages end
 
 //getters
 string	ClapTrap::getName(void)
@@ -68,7 +80,7 @@ void	ClapTrap::attack(string &target)
 {
 	if (this->tiredOrDied())
 		return ;
-	cout << this->_name << " attacks " << target << " and inflicts " << this->_att << " damage" << endl;
+	this->attMsg(target);
 	this->_ep -= 1;
 }
 

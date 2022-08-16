@@ -16,7 +16,11 @@ class	ClapTrap
 		ClapTrap(ClapTrap &tocopy);
 		ClapTrap &operator=(ClapTrap &toassign);
 
+		//messages
 		void	introMsg(void);
+		void	attMsg(string &target);
+		void	byeMsg(void);
+		//messages end
 		
 		//getters
 		string	getName(void);

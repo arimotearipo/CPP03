@@ -22,6 +22,11 @@ ScavTrap::ScavTrap(string name)
 	this->introMsg();
 }
 
+ScavTrap::~ScavTrap(void)
+{
+	this->byeMsg();
+}
+
 ScavTrap::ScavTrap(ScavTrap const &tocopy)
 {
 	*this = tocopy;
@@ -39,9 +44,29 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &toassign)
 	return (*this);
 }
 
+//messages
 void	ScavTrap::introMsg(void)
 {
 	cout << "Me am " << this->_name << ". A strong ScavTrap" << endl;
+}
+
+void	ScavTrap::attMsg(string &target)
+{
+	cout << "Pew! Pew! " << this->_name << " attacked " << target << " and dealt " << this->_att << " damage!" << endl;
+}
+
+void	ScavTrap::byeMsg(void)
+{
+	cout << "This is goodbye from " << this->_name << endl;
+}
+//messages end
+
+void	ScavTrap::attack(string &target)
+{
+	if (this->tiredOrDied())
+		return ;
+	this->attMsg(target);
+	this->_ep -= 1;
 }
 
 void	ScavTrap::guardGate(void)
