@@ -14,8 +14,17 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap(DiamondTrap const &tocopy);
 		DiamondTrap	&operator=(DiamondTrap const &toassign);
 
+		// messages
+		void	introMsg(void);
+		void	byeMsg(void);
+		// messages end
+
+		using ScavTrap::attack;
+
+		// special capacity
+		void	whoAmI(void);
 	private:
-		string	_dtname;
+		string	_name;
 };
 
 #endif

@@ -16,6 +16,7 @@ int	main(void)
 	FragTrap	frag("Ch@rl13");
 	cout << endl;
 	DiamondTrap	diam("D3lt@");
+	diam.whoAmI();
 	cout << endl;
 	return (0);
 }
