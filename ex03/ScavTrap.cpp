@@ -4,6 +4,9 @@ using std::string;
 using std::cout;
 using std::endl;
 
+#define RED "\e[0;31m"
+#define RESET "\e[0m"
+
 ScavTrap::ScavTrap(void)
 {
 	this->_name = "unknown ScavTrap";
@@ -47,29 +50,32 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &toassign)
 //messages
 void	ScavTrap::introMsg(void)
 {
-	cout << RED << "Me am " << this->_name << ". A strong ScavTrap" << COLOR_RESET << endl;
+	cout << BLU << "Me am " << this->_name << ". A strong ScavTrap" << RESET << endl;
 }
 
 void	ScavTrap::attMsg(string &target)
 {
-	cout << "Pew! Pew! " << this->_name << " attacked " << target << " and dealt " << this->_att << " damage!" << endl;
+	cout << RED << "Pew! Pew! " << this->_name << " attacked " << target << " and dealt " << this->_att << " damage!" << RESET << endl;
 }
 
 void	ScavTrap::byeMsg(void)
 {
-	cout << "This is goodbye from " << this->_name << endl;
+	cout << CYN <<"This is goodbye from " << this->_name << RESET << endl;
 }
 //messages end
 
 void	ScavTrap::attack(string &target)
 {
 	if (this->tiredOrDied())
+	{
+		cout << RED << this->_name << " is too tired to attack" << RESET << endl;
 		return ;
+	}
 	this->attMsg(target);
 	this->_ep -= 1;
 }
 
 void	ScavTrap::guardGate(void)
 {
-	cout << this->_name << " is in Gate keeper mode" << endl;
+	cout << YEL << this->_name << " is in Gate keeper mode" << RESET << endl;
 }

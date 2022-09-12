@@ -47,16 +47,16 @@ FragTrap	&FragTrap::operator=(FragTrap const &toassign)
 //messages
 void	FragTrap::introMsg(void)
 {
-	cout << "Checking in is " << this->_name << ". A FragTrap." << endl;
+	cout << BLU "Checking in is " << this->_name << ". A FragTrap." RESET << endl;
 }
 
 void	FragTrap::byeMsg(void)
 {
-	cout << "Checking out is " << this->_name << ". A FragTrap." << endl;
+	cout << CYN "Checking out is " << this->_name << ". A FragTrap." RESET << endl;
 }
 //messages end
 
 void	FragTrap::highFiveGuys(void)
 {
-	cout << "Can " << this->_name << " get a high five, guys? No?" << endl;
+	cout << YEL "Can " << this->_name << " get a high five, guys? No?" << RESET << endl;
 }

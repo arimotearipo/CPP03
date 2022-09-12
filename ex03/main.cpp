@@ -9,13 +9,23 @@ using std::endl;
 
 int	main(void)
 {
-	ClapTrap	clap("A8u");
+	cout << UWHT << "Instantiating a ClapTrap..." RESET << endl;
+	ClapTrap	clap("Alpha");
 	cout << endl;
-	ScavTrap	scav("Brav0");
+
+	cout << UWHT << "Instantiating a ScavTrap..." RESET << endl;
+	ScavTrap	scav("Bravo");
 	cout << endl;
-	FragTrap	frag("Ch@rl13");
+
+	cout << UWHT << "Instantiating a FragTrap..." RESET << endl;
+	FragTrap	frag("Charlie");
 	cout << endl;
-	DiamondTrap	diam("D3lt@");
+
+	cout << UWHT << "Instantiating a DiamondTrap..." RESET << endl;
+	DiamondTrap	diam("Delta");
+	cout << endl;
+
+	cout << UWHT << "DiamondTrap calling whoAmI() function..." << RESET << endl;
 	diam.whoAmI();
 	cout << endl;
 	return (0);

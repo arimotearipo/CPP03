@@ -40,15 +40,15 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &toassign)
 
 void	DiamondTrap::introMsg(void)
 {
-	cout << RED << "I am a DiamondTrap named " << this->_name << endl;
+	cout << BLU << "I am a DiamondTrap named " << this->_name << RESET << endl;
 }
 
 void	DiamondTrap::byeMsg(void)
 {
-	cout << this->_name << " just got destroyed" << endl;
+	cout << CYN << this->_name << " just got destroyed" << RESET << endl;
 }
 
 void	DiamondTrap::whoAmI(void)
 {
-	cout << GRN << "My name is " << YEL << this->_name << GRN << " and my given ClapTrap name is " << YEL << ClapTrap::_name << COLOR_RESET << endl;
+	cout << GRN << "My name is " << YEL << this->_name << GRN << " and my given ClapTrap name is " << YEL << ClapTrap::_name << RESET << endl;
 }

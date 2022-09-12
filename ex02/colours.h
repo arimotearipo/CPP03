@@ -1,4 +1,5 @@
-
+#ifndef COLOURS_H
+#define COLOURS_H
 
 #define BLK "\e[0;30m"
 #define RED "\e[0;31m"
@@ -70,6 +71,8 @@
 #define BHWHT "\e[1;97m"
 
 //Reset
-#define reset "\e[0m"
 #define RESET "\e[0m"
+#define CRESET "\e[0m"
 #define COLOR_RESET "\e[0m"
+
+#endif
