@@ -7,11 +7,20 @@ using std::endl;
 
 int	main(void)
 {
-	// ClapTrap	clap("clap");
-	ClapTrap	*scav = new ScavTrap("scav");
+	cout << UWHT << "Instantiating a ClapTrap..." << RESET << endl;
+	ClapTrap	clap("Alpha");
+	cout << endl;
 
-	// cout << "hp" << scav.getHP() << endl << "ep" << scav.getEP() << endl << "att" << scav.getAtt() << endl;
+	cout << UWHT << "Instantiating a ScavTrap..." << RESET << endl;
+	ScavTrap	*scav = new ScavTrap("Bravo");
+	cout << endl;
+
+	cout << UWHT << "Calling guardGate() for ScavTrap..." << RESET << endl;
+	scav->guardGate();
+	cout << endl;
+
+	cout << UWHT << "Deleting ScavTrap..." << RESET << endl;
 	delete scav;
-	// system("leaks ClapTrap");
+	cout << endl;
 	return (0);
 }

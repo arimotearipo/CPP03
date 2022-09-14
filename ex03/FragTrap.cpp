@@ -6,6 +6,7 @@ using std::endl;
 
 FragTrap::FragTrap(void)
 {
+	cout << YEL << "[FRAGTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = "Fragger Trapper";
 	this->_hp = 100;
 	this->_ep = 100;
@@ -15,6 +16,7 @@ FragTrap::FragTrap(void)
 
 FragTrap::FragTrap(string name)
 {
+	cout << YEL << "[FRAGTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = name;
 	this->_hp = 100;
 	this->_ep = 100;
@@ -24,6 +26,7 @@ FragTrap::FragTrap(string name)
 
 FragTrap::~FragTrap(void)
 {
+	cout << YEL << "[FRAGTRAP DECONSTRUCTOR]" << RESET << " ";
 	this->byeMsg();
 }
 
@@ -47,16 +50,19 @@ FragTrap	&FragTrap::operator=(FragTrap const &toassign)
 //messages
 void	FragTrap::introMsg(void)
 {
-	cout << BLU "Checking in is " << this->_name << ". A FragTrap." RESET << endl;
+	cout << YEL << "[introMsg()]" << RESET << " ";
+	cout << YEL "Checking in is " << this->_name << ". A FragTrap." RESET << endl;
 }
 
 void	FragTrap::byeMsg(void)
 {
-	cout << CYN "Checking out is " << this->_name << ". A FragTrap." RESET << endl;
+	cout << YEL << "[byeMsg()]" << RESET << " ";
+	cout << YEL "Checking out is " << this->_name << ". A FragTrap." RESET << endl;
 }
 //messages end
 
 void	FragTrap::highFiveGuys(void)
 {
+	cout << YEL << "[highFiveGuys()]" << RESET << " ";
 	cout << YEL "Can " << this->_name << " get a high five, guys? No?" << RESET << endl;
 }

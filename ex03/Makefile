@@ -4,13 +4,15 @@ FLAGS = 	-Wall -Wextra -Werror
 
 SRCS = 		main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
+HEAD = 		ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+
 OBJS = 		$(SRCS:.cpp=.o)
 
-NAME = 		ClapTrap
+NAME = 		DiamondTrap
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJS) $(HEAD)
 			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:		

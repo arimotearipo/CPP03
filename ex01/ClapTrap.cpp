@@ -6,18 +6,21 @@ using std::endl;
 
 ClapTrap::ClapTrap(void) : _name("unknown"), _hp(10), _ep(10), _att(10)
 {
+	cout << BLU << "[CLAPTRAP CONSTRUCTOR]" RESET << " ";
 	cout << BBLU "A ClapTrap-like machine is built" RESET << endl;
 }
 
 ClapTrap::ClapTrap(string name) : _hp(10), _ep(10), _att(10)
 {
 	_name = name;
+	cout << BLU << "[CLAPTRAP CONSTRUCTOR]" << RESET << " ";
 	this->introMsg();
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	cout << RED << this->_name << ", a ClapTrap-like machine is destroyed" RESET << endl;
+	cout << BLU "[CLAPTRAP DECONSTRUCTOR]" << RESET << " ";
+	this->byeMsg();
 }
 
 ClapTrap::ClapTrap(ClapTrap &tocopy)
@@ -37,17 +40,20 @@ ClapTrap	&ClapTrap::operator=(ClapTrap &toassign)
 //messages
 void	ClapTrap::introMsg(void)
 {
+	cout << BLU "[introMsg()]" << RESET << " ";
 	cout << BLU "Hi, my name is " << this->_name << ". I'm a ClapTrap" RESET << endl;
 }
 
 void	ClapTrap::attMsg(string &target)
 {
-	cout << RED << this->_name << "attacks " << target << " and inflected " << this->_att << " damage!" RESET << endl;
+	cout << BLU << "[attMsg()]" << RESET << " ";
+	cout << BLU << this->_name << "attacks " << target << " and inflicted " << this->_att << " damage!" RESET << endl;
 }
 
 void	ClapTrap::byeMsg(void)
 {
-	cout << CYN << this->_name << " signing off" << RESET << endl;
+	cout << BLU << "[byeMsg()]" << RESET << " ";
+	cout << BLU << this->_name << " signing off" << RESET << endl;
 }
 //messages end
 
@@ -80,7 +86,7 @@ void	ClapTrap::attack(string &target)
 {
 	if (this->tiredOrDied())
 	{
-		cout << RED << this->_name << " is too tired to attack" << RESET << endl;
+		cout << BLU << this->_name << " is too tired to attack" << RESET << endl;
 		return ;
 	}
 	this->attMsg(target);
@@ -89,10 +95,11 @@ void	ClapTrap::attack(string &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	cout << RED << this->_name << " has taken " << amount << " damage" << RESET << endl;
+	cout << BLU << "[takeDamage()]" << RESET << " ";
+	cout << BLU << this->_name << " has taken " << amount << " damage" << RESET << endl;
 	if (amount >= this->_hp)
 	{
-		cout << BRED << this->_name << " received the killing blow" << RESET << endl;
+		cout << BBLU << this->_name << " received the killing blow" << RESET << endl;
 	}
 	this->_hp -= amount;
 }
@@ -101,10 +108,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->tiredOrDied())
 	{
-		cout << RED << this->_name << " is too tired to be repaired" << RESET << endl;
+		cout << BLU << this->_name << " is too tired to be repaired" << RESET << endl;
 		return ;
 	}
-	cout << GRN << this->_name << " repaired itself" << RESET << endl;
+	cout << UBLU << "[beRepaired]" << RESET << " ";
+	cout << BLU << this->_name << " repaired itself" << RESET << endl;
 	this->_hp += amount;
 	this->_ep -= 1;
 }
@@ -113,12 +121,12 @@ bool	ClapTrap::tiredOrDied(void)
 {
 	if (this->_hp <= 0)
 	{
-		cout << BRED << _name << " has died" << RESET << endl;
+		// cout << BRED << _name << " has died" << RESET << endl;
 		return (true);
 	}
 	else if (this->_ep <= 0)
 	{
-		cout << RED << _name << " is exhausted" << RESET << endl;
+		// cout << RED << _name << " is exhausted" << RESET << endl;
 		return (true);
 	}
 	else

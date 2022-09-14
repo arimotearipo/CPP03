@@ -8,8 +8,20 @@ using std::endl;
 
 int	main(void)
 {
-	ClapTrap	clap("A8u");
-	ScavTrap	scav("Brav0");
-	FragTrap	frag("Ch@rl13");
+	cout << UWHT << "Instantiating ClapTrap..." << RESET << endl;
+	ClapTrap	clap("Alpha");
+	cout << endl;
+
+	cout << UWHT << "Instantiating ScavTrap..." << RESET << endl;
+	ScavTrap	scav("Bravo");
+	cout << endl;
+
+	cout << UWHT << "Instantiating FragTrap..." << RESET << endl;
+	FragTrap	frag("Charlie");
+	cout << endl;
+
+	cout << UWHT << "Calling highFiveGuys() for FragTrap..." << RESET << endl;
+	frag.highFiveGuys();
+	cout << endl;
 	return (0);
 }

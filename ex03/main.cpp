@@ -22,11 +22,15 @@ int	main(void)
 	cout << endl;
 
 	cout << UWHT << "Instantiating a DiamondTrap..." RESET << endl;
-	DiamondTrap	diam("Delta");
+	DiamondTrap	*diam = new DiamondTrap("Delta");
 	cout << endl;
 
 	cout << UWHT << "DiamondTrap calling whoAmI() function..." << RESET << endl;
-	diam.whoAmI();
+	diam->whoAmI();
+	cout << endl;
+
+	cout << UWHT << "Deleting DiamondTrap..." << RESET << endl;
+	delete diam;
 	cout << endl;
 	return (0);
 }

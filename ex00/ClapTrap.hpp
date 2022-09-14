@@ -42,7 +42,7 @@ class	ClapTrap
 		void	beRepaired(unsigned int amount);
 		bool	tiredOrDied(void);
 
-	protected:
+	private:
 		string	_name;
 		int		_hp;
 		int		_ep;

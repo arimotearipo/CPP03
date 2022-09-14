@@ -7,6 +7,7 @@ using std::endl;
 DiamondTrap::DiamondTrap(void)
 {
 	this->_name = "unnamed DiamondTrap";
+	cout << MAG << "[DIAMONDTRAP CONSTRUCTOR]" << RESET << " ";
 	this->introMsg();
 }
 
@@ -17,10 +18,13 @@ DiamondTrap::DiamondTrap(string name)
 	this->_hp = FragTrap::_hp;
 	this->_ep = ScavTrap::_ep;
 	this->_att = FragTrap::_att;
+	cout << MAG << "[DIAMONDTRAP CONSTRUCTOR]" << RESET << " ";
+	this->introMsg();
 }
 
 DiamondTrap::~DiamondTrap(void)
 {
+	cout << MAG << "[DIAMONDTRAP DECONSTRUCTOR]" << RESET << " ";
 	this->byeMsg();
 }
 
@@ -40,15 +44,18 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &toassign)
 
 void	DiamondTrap::introMsg(void)
 {
-	cout << BLU << "I am a DiamondTrap named " << this->_name << RESET << endl;
+	cout << MAG << "[introMsg()]" << RESET << " ";
+	cout << MAG << "I am a DiamondTrap named " << this->_name << RESET << endl;
 }
 
 void	DiamondTrap::byeMsg(void)
 {
-	cout << CYN << this->_name << " just got destroyed" << RESET << endl;
+	cout << MAG << "[byeMsg()]" << RESET << " ";
+	cout << MAG << this->_name << " just got destroyed" << RESET << endl;
 }
 
 void	DiamondTrap::whoAmI(void)
 {
-	cout << GRN << "My name is " << YEL << this->_name << GRN << " and my given ClapTrap name is " << YEL << ClapTrap::_name << RESET << endl;
+	cout << MAG << "[whoAmI()]" << RESET << " ";
+	cout << MAG << "My name is " << BWHT << this->_name << MAG << " and my given ClapTrap name is " << BWHT << ClapTrap::_name << RESET << endl;
 }

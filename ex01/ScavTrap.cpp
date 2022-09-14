@@ -4,11 +4,9 @@ using std::string;
 using std::cout;
 using std::endl;
 
-#define RED "\e[0;31m"
-#define RESET "\e[0m"
-
 ScavTrap::ScavTrap(void)
 {
+	cout << GRN << "[SCAVTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = "unknown ScavTrap";
 	this->_hp = 100;
 	this->_ep = 50;
@@ -18,6 +16,7 @@ ScavTrap::ScavTrap(void)
 
 ScavTrap::ScavTrap(string name)
 {
+	cout << GRN << "[SCAVTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = name;
 	this->_hp = 100;
 	this->_ep = 50;
@@ -27,6 +26,7 @@ ScavTrap::ScavTrap(string name)
 
 ScavTrap::~ScavTrap(void)
 {
+	cout << GRN << "[SCAVTRAP DECONSTRUCTOR]" << RESET << " ";
 	this->byeMsg();
 }
 
@@ -50,17 +50,20 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &toassign)
 //messages
 void	ScavTrap::introMsg(void)
 {
-	cout << BLU << "Me am " << this->_name << ". A strong ScavTrap" << RESET << endl;
+	cout << GRN << "[introMsg()]" << RESET << " ";
+	cout << GRN << "Me am " << this->_name << ". A strong ScavTrap" << RESET << endl;
 }
 
 void	ScavTrap::attMsg(string &target)
 {
-	cout << RED << "Pew! Pew! " << this->_name << " attacked " << target << " and dealt " << this->_att << " damage!" << RESET << endl;
+	cout << GRN << "[attMsg()]" << RESET << " ";
+	cout << GRN << "Pew! Pew! " << this->_name << " attacked " << target << " and dealt " << this->_att << " damage!" << RESET << endl;
 }
 
 void	ScavTrap::byeMsg(void)
 {
-	cout << CYN <<"This is goodbye from " << this->_name << RESET << endl;
+	cout << GRN << "[byeMsg()]" << RESET << " ";
+	cout << GRN <<"This is goodbye from " << this->_name << RESET << endl;
 }
 //messages end
 
@@ -68,7 +71,7 @@ void	ScavTrap::attack(string &target)
 {
 	if (this->tiredOrDied())
 	{
-		cout << RED << this->_name << " is too tired to attack" << RESET << endl;
+		cout << GRN << this->_name << " is too tired to attack" << RESET << endl;
 		return ;
 	}
 	this->attMsg(target);
@@ -77,5 +80,6 @@ void	ScavTrap::attack(string &target)
 
 void	ScavTrap::guardGate(void)
 {
-	cout << YEL << this->_name << " is in Gate keeper mode" << RESET << endl;
+	cout << GRN << "[guardGate()]" << RESET << " ";
+	cout << GRN << this->_name << " is in Gate keeper mode" << RESET << endl;
 }
