@@ -17,7 +17,7 @@ ScavTrap::ScavTrap(void)
 	this->introMsg();
 }
 
-ScavTrap::ScavTrap(string name)
+ScavTrap::ScavTrap(string const &name)
 {
 	cout << GRN << "[SCAVTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = name;
@@ -57,7 +57,7 @@ void	ScavTrap::introMsg(void)
 	cout << GRN << "Me am " << this->_name << ". A strong ScavTrap" << RESET << endl;
 }
 
-void	ScavTrap::attMsg(string &target)
+void	ScavTrap::attMsg(string const &target)
 {
 	cout << GRN << "[attMsg()]" << RESET << " ";
 	cout << GRN << "Pew! Pew! " << this->_name << " attacked " << target << " and dealt " << this->_att << " damage!" << RESET << endl;
@@ -70,7 +70,7 @@ void	ScavTrap::byeMsg(void)
 }
 //messages end
 
-void	ScavTrap::attack(string &target)
+void	ScavTrap::attack(string const &target)
 {
 	if (this->tiredOrDied())
 	{

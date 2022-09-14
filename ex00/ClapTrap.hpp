@@ -10,24 +10,24 @@ class	ClapTrap
 {
 	public:
 		ClapTrap(void);
-		ClapTrap(string	name);
+		ClapTrap(string	const &name);
 
 		~ClapTrap(void);
 
-		ClapTrap(ClapTrap &tocopy);
-		ClapTrap &operator=(ClapTrap &toassign);
+		ClapTrap(ClapTrap const &tocopy);
+		ClapTrap &operator=(ClapTrap const &toassign);
 
 		//messages
 		void	introMsg(void);
-		void	attMsg(string &target);
+		void	attMsg(string const &target);
 		void	byeMsg(void);
 		//messages end
 		
 		//getters
-		string	getName(void);
-		int		getHP(void);
-		int		getEP(void);
-		int		getAtt(void);
+		string	const &getName(void) const;
+		int		getHP(void) const;
+		int		getEP(void) const;
+		int		getAtt(void) const;
 		//getters end
 
 		//setters
@@ -37,7 +37,7 @@ class	ClapTrap
 		// void	setAtt(int n);
 		//setters end
 
-		void	attack(string &target);
+		void	attack(string const &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		bool	tiredOrDied(void);

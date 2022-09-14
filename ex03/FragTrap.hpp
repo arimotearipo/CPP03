@@ -7,7 +7,7 @@ class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap(void);
-		FragTrap(string name);
+		FragTrap(string const &name);
 		~FragTrap(void);
 		FragTrap(FragTrap const &tocopy);
 		FragTrap &operator=(FragTrap const &toassign);

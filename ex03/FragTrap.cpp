@@ -14,7 +14,7 @@ FragTrap::FragTrap(void)
 	this->introMsg();
 }
 
-FragTrap::FragTrap(string name)
+FragTrap::FragTrap(string const &name)
 {
 	cout << YEL << "[FRAGTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = name;
@@ -33,6 +33,7 @@ FragTrap::~FragTrap(void)
 FragTrap::FragTrap(FragTrap const &tocopy)
 {
 	*this = tocopy;
+	this->introMsg();
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &toassign)
@@ -44,6 +45,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &toassign)
 		this->_ep = toassign._ep;
 		this->_att = toassign._att;
 	}
+	this->introMsg();
 	return (*this);
 }
 

@@ -7,11 +7,15 @@ using std::endl;
 DiamondTrap::DiamondTrap(void)
 {
 	DiamondTrap::_name = "unnamed DiamondTrap";
+	ClapTrap::_name = this->_name + "_clap_name";
+	this->_hp = FragTrap::_hp;
+	this->_ep = ScavTrap::_ep;
+	this->_att = FragTrap::_att;
 	cout << MAG << "[DIAMONDTRAP CONSTRUCTOR]" << RESET << " ";
 	this->introMsg();
 }
 
-DiamondTrap::DiamondTrap(string name)
+DiamondTrap::DiamondTrap(string &name)
 {
 	DiamondTrap::_name = name;
 	ClapTrap::_name = name + "_clap_name";
@@ -35,6 +39,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const &tocopy)
 
 DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &toassign)
 {
+	ClapTrap::_name = toassign.getClapName();
 	this->_name = toassign._name;
 	this->_hp = toassign._hp;
 	this->_ep = toassign._ep;
@@ -54,12 +59,12 @@ void	DiamondTrap::byeMsg(void)
 	cout << MAG << this->_name << " just got destroyed" << RESET << endl;
 }
 
-string	DiamondTrap::getName(void)
+string	&DiamondTrap::getName(void) const
 {
 	return (this->_name);
 }
 
-string	DiamondTrap::getClapName(void)
+string	&DiamondTrap::getClapName(void) const
 {
 	return (ClapTrap::_name);
 }

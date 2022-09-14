@@ -9,18 +9,18 @@ class ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap(void);
-		ScavTrap(string name);
+		ScavTrap(string const &name);
 		~ScavTrap(void);
 		ScavTrap(ScavTrap const &tocopy);
 		ScavTrap &operator=(ScavTrap const &toassign);
 
 		//messages
 		void	introMsg(void);
-		void	attMsg(string &target);
+		void	attMsg(string const &target);
 		void	byeMsg(void);
 		//messages end
 
-		void	attack(string &target);
+		void	attack(string const &target);
 		void	guardGate(void);
 };
 

@@ -7,10 +7,10 @@ using std::endl;
 ClapTrap::ClapTrap(void) : _name("unknown"), _hp(10), _ep(10), _att(0)
 {
 	cout << BLU << "[CLAPTRAP CONSTRUCTOR]" RESET << " ";
-	cout << BBLU "A ClapTrap-like machine is built" RESET << endl;
+	this->introMsg();
 }
 
-ClapTrap::ClapTrap(string name) : _hp(10), _ep(10), _att(0)
+ClapTrap::ClapTrap(string const &name) : _hp(10), _ep(10), _att(0)
 {
 	_name = name;
 	cout << BLU << "[CLAPTRAP CONSTRUCTOR]" << RESET << " ";
@@ -23,12 +23,12 @@ ClapTrap::~ClapTrap(void)
 	this->byeMsg();
 }
 
-ClapTrap::ClapTrap(ClapTrap &tocopy)
+ClapTrap::ClapTrap(ClapTrap const &tocopy)
 {
 	*this = tocopy;
 }
 
-ClapTrap	&ClapTrap::operator=(ClapTrap &toassign)
+ClapTrap	&ClapTrap::operator=(ClapTrap const &toassign)
 {
 	this->_name = toassign._name;
 	this->_hp = toassign._hp;
@@ -44,7 +44,7 @@ void	ClapTrap::introMsg(void)
 	cout << BLU "Hi, my name is " << this->_name << ". I'm a ClapTrap" RESET << endl;
 }
 
-void	ClapTrap::attMsg(string &target)
+void	ClapTrap::attMsg(string const &target)
 {
 	cout << BLU << "[attMsg()]" << RESET << " ";
 	cout << BLU << this->_name << "attacks " << target << " and inflicted " << this->_att << " damage!" RESET << endl;
@@ -58,22 +58,22 @@ void	ClapTrap::byeMsg(void)
 //messages end
 
 //getters
-string	ClapTrap::getName(void)
+string	const &ClapTrap::getName(void) const
 {
 	return (this->_name);
 }
 
-int		ClapTrap::getHP(void)
+int		ClapTrap::getHP(void) const
 {
 	return (this->_hp);
 }
 
-int		ClapTrap::getEP(void)
+int		ClapTrap::getEP(void) const
 {
 	return (this->_ep);
 }
 
-int		ClapTrap::getAtt(void)
+int		ClapTrap::getAtt(void) const
 {
 	return (this->_att);
 }
@@ -82,7 +82,7 @@ int		ClapTrap::getAtt(void)
 //setters
 //setters end
 
-void	ClapTrap::attack(string &target)
+void	ClapTrap::attack(string const &target)
 {
 	if (this->tiredOrDied())
 	{

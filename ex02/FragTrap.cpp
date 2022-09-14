@@ -14,7 +14,7 @@ FragTrap::FragTrap(void)
 	this->introMsg();
 }
 
-FragTrap::FragTrap(string name)
+FragTrap::FragTrap(string const &name)
 {
 	this->_name = name;
 	this->_hp = 100;
