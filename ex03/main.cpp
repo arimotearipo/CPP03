@@ -63,6 +63,14 @@ int	main(void)
 	diam.whoAmI();
 	cout << endl;
 
+	cout << UWHT << "DiamondTrap calling FragTrap's highFiveGuys() method..." << RESET << endl;
+	diam.highFiveGuys();
+	cout << endl;
+
+	cout << UWHT << "DiamondTrap calling ScavTrap's guardGate() method..." << RESET << endl;
+	diam.guardGate();
+	cout << endl;
+
 	cout << UWHT << "Deleting DiamondTrap..." << RESET << endl;
 	cout << endl;
 	return (0);

@@ -17,11 +17,11 @@ int	main(void)
 	cout << endl;
 
 	cout << UWHT << "Instantiating FragTrap..." << RESET << endl;
-	FragTrap	frag("Charlie");
+	FragTrap	*frag = new FragTrap("Charlie");
 	cout << endl;
 
 	cout << UWHT << "Calling highFiveGuys() for FragTrap..." << RESET << endl;
-	frag.highFiveGuys();
+	frag->highFiveGuys();
 	cout << endl;
 
 	cout << UWHT << "Showing ClapTrap's attributes..." << RESET << endl;
@@ -39,10 +39,14 @@ int	main(void)
 	cout << endl;
 
 	cout << UWHT << "Showing FragTrap's attributes..." << RESET << endl;
-	cout << "Name: " << frag.getName() << endl;
-	cout << "Attack point: " << frag.getAtt() << endl;
-	cout << "Health point: " << frag.getHP() << endl;
-	cout << "Energy point: " << frag.getEP() << endl;
+	cout << "Name: " << frag->getName() << endl;
+	cout << "Attack point: " << frag->getAtt() << endl;
+	cout << "Health point: " << frag->getHP() << endl;
+	cout << "Energy point: " << frag->getEP() << endl;
+	cout << endl;
+
+	cout << UWHT << "Deleting the FragTrap..." << RESET << endl;
+	delete frag;
 	cout << endl;
 	return (0);
 }
