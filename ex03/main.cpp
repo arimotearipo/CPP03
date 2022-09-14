@@ -22,7 +22,7 @@ int	main(void)
 	cout << endl;
 
 	cout << UWHT << "Instantiating a DiamondTrap..." RESET << endl;
-	DiamondTrap	diam("Delta");
+	DiamondTrap	*diam = new DiamondTrap("Delta");
 	cout << endl;
 
 	cout << UWHT << "ScavTrap calling the attack() method..." << RESET << endl;
@@ -52,26 +52,27 @@ int	main(void)
 	cout << endl;
 
 	cout << UWHT << "Showing DiamondTrap's attributes..." << RESET << endl;
-	cout << "Name: " << diam.getName() << endl;
-	cout << "Clap name: " << diam.getClapName() << endl;
-	cout << "Attack point: " << diam.getAtt() << endl;
-	cout << "Health point: " << diam.getHP() << endl;
-	cout << "Energy point: " << diam.getEP() << endl;
+	cout << "Name: " << diam->getName() << endl;
+	cout << "Clap name: " << diam->getClapName() << endl;
+	cout << "Attack point: " << diam->getAtt() << endl;
+	cout << "Health point: " << diam->getHP() << endl;
+	cout << "Energy point: " << diam->getEP() << endl;
 	cout << endl;
 
 	cout << UWHT << "DiamondTrap calling whoAmI() function..." << RESET << endl;
-	diam.whoAmI();
+	diam->whoAmI();
 	cout << endl;
 
 	cout << UWHT << "DiamondTrap calling FragTrap's highFiveGuys() method..." << RESET << endl;
-	diam.highFiveGuys();
+	diam->highFiveGuys();
 	cout << endl;
 
 	cout << UWHT << "DiamondTrap calling ScavTrap's guardGate() method..." << RESET << endl;
-	diam.guardGate();
+	diam->guardGate();
 	cout << endl;
 
 	cout << UWHT << "Deleting DiamondTrap..." << RESET << endl;
+	delete diam;
 	cout << endl;
 	return (0);
 }
