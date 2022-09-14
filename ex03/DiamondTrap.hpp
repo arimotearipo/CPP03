@@ -9,7 +9,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 	public:
 		DiamondTrap(void);
-		DiamondTrap(string &name);
+		DiamondTrap(string const &name);
 		~DiamondTrap(void);
 		DiamondTrap(DiamondTrap const &tocopy);
 		DiamondTrap	&operator=(DiamondTrap const &toassign);
@@ -20,8 +20,8 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		// messages end
 
 		// getters
-		string	&getName(void) const;
-		string	&getClapName(void) const;
+		string	const &getName(void) const;
+		string	const &getClapName(void) const;
 		// getters end
 
 		using ScavTrap::attack; // does nothing

@@ -15,7 +15,7 @@ DiamondTrap::DiamondTrap(void)
 	this->introMsg();
 }
 
-DiamondTrap::DiamondTrap(string &name)
+DiamondTrap::DiamondTrap(string const &name)
 {
 	DiamondTrap::_name = name;
 	ClapTrap::_name = name + "_clap_name";
@@ -59,14 +59,14 @@ void	DiamondTrap::byeMsg(void)
 	cout << MAG << this->_name << " just got destroyed" << RESET << endl;
 }
 
-string	&DiamondTrap::getName(void) const
+string	const &DiamondTrap::getName(void) const
 {
 	return (this->_name);
 }
 
-string	&DiamondTrap::getClapName(void) const
+string	const &DiamondTrap::getClapName(void) const
 {
-	return (ClapTrap::_name);
+	return (ClapTrap::getName());
 }
 
 void	DiamondTrap::whoAmI(void)
