@@ -4,13 +4,13 @@ using std::string;
 using std::cout;
 using std::endl;
 
-ClapTrap::ClapTrap(void) : _name("unknown"), _hp(10), _ep(10), _att(10)
+ClapTrap::ClapTrap(void) : _name("unknown"), _hp(10), _ep(10), _att(0)
 {
 	cout << BLU << "[CLAPTRAP CONSTRUCTOR]" RESET << " ";
 	cout << BBLU "A ClapTrap-like machine is built" RESET << endl;
 }
 
-ClapTrap::ClapTrap(string name) : _hp(10), _ep(10), _att(10)
+ClapTrap::ClapTrap(string name) : _hp(10), _ep(10), _att(0)
 {
 	_name = name;
 	cout << BLU << "[CLAPTRAP CONSTRUCTOR]" << RESET << " ";
