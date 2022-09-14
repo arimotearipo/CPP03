@@ -6,14 +6,14 @@ using std::endl;
 
 DiamondTrap::DiamondTrap(void)
 {
-	this->_name = "unnamed DiamondTrap";
+	DiamondTrap::_name = "unnamed DiamondTrap";
 	cout << MAG << "[DIAMONDTRAP CONSTRUCTOR]" << RESET << " ";
 	this->introMsg();
 }
 
 DiamondTrap::DiamondTrap(string name)
 {
-	this->_name = name;
+	DiamondTrap::_name = name;
 	ClapTrap::_name = name + "_clap_name";
 	this->_hp = FragTrap::_hp;
 	this->_ep = ScavTrap::_ep;

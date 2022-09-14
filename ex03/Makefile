@@ -1,6 +1,8 @@
-CC = 		c++ -std=c++98
+CC = 		c++
 
 FLAGS = 	-Wall -Wextra -Werror
+
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = 		main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 

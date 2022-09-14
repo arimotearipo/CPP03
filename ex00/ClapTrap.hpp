@@ -43,10 +43,10 @@ class	ClapTrap
 		bool	tiredOrDied(void);
 
 	private:
-		string	_name;
-		int		_hp;
-		int		_ep;
-		int		_att;
+		string				_name;
+		unsigned int		_hp;
+		unsigned int		_ep;
+		unsigned int		_att;
 };
 
 #endif

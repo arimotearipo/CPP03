@@ -1,6 +1,8 @@
-CC = 		c++ -std=c++98
+CC = 		c++
 
 FLAGS = 	-Wall -Wextra -Werror
+
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 MAIN =		main.cpp
 
@@ -14,8 +16,8 @@ NAME = 		ClapTrap
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(HEAD)
-			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+$(NAME):	$(SRCS) $(HEAD)
+			$(CC) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:		
 			rm -rf $(OBJS)
