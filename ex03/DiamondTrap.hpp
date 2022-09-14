@@ -19,6 +19,11 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		void	byeMsg(void);
 		// messages end
 
+		// getters
+		string	getName(void);
+		string	getClapName(void);
+		// getters end
+
 		using ScavTrap::attack;
 
 		// special capacity

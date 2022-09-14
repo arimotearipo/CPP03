@@ -22,15 +22,48 @@ int	main(void)
 	cout << endl;
 
 	cout << UWHT << "Instantiating a DiamondTrap..." RESET << endl;
-	DiamondTrap	*diam = new DiamondTrap("Delta");
+	DiamondTrap	diam("Delta");
+	cout << endl;
+
+	cout << UWHT << "ScavTrap calling the attack() method..." << RESET << endl;
+	string randomname = "whoever";
+	scav.attack(randomname);
+	cout << endl;
+
+	cout << UWHT << "Showing ClapTrap's attributes..." << RESET << endl;
+	cout << "Name: " << clap.getName() << endl;
+	cout << "Attack point: " << clap.getAtt() << endl;
+	cout << "Health point: " << clap.getHP() << endl;
+	cout << "Energy point: " << clap.getEP() << endl;
+	cout << endl;
+
+	cout << UWHT << "Showing ScavTrap's attributes..." << RESET << endl;
+	cout << "Name: " << scav.getName() << endl;
+	cout << "Attack point: " << scav.getAtt() << endl;
+	cout << "Health point: " << scav.getHP() << endl;
+	cout << "Energy point: " << scav.getEP() << endl;
+	cout << endl;
+
+	cout << UWHT << "Showing FragTrap's attributes..." << RESET << endl;
+	cout << "Name: " << frag.getName() << endl;
+	cout << "Attack point: " << frag.getAtt() << endl;
+	cout << "Health point: " << frag.getHP() << endl;
+	cout << "Energy point: " << frag.getEP() << endl;
+	cout << endl;
+
+	cout << UWHT << "Showing DiamondTrap's attributes..." << RESET << endl;
+	cout << "Name: " << diam.getName() << endl;
+	cout << "Clap name: " << diam.getClapName() << endl;
+	cout << "Attack point: " << diam.getAtt() << endl;
+	cout << "Health point: " << diam.getHP() << endl;
+	cout << "Energy point: " << diam.getEP() << endl;
 	cout << endl;
 
 	cout << UWHT << "DiamondTrap calling whoAmI() function..." << RESET << endl;
-	diam->whoAmI();
+	diam.whoAmI();
 	cout << endl;
 
 	cout << UWHT << "Deleting DiamondTrap..." << RESET << endl;
-	delete diam;
 	cout << endl;
 	return (0);
 }
