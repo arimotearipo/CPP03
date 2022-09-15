@@ -17,7 +17,12 @@ class FragTrap : virtual public ClapTrap
 		void	byeMsg(void);
 		//messages end
 
+
 		void	highFiveGuys(void);
+
+	protected:
+		unsigned int _hp;
+		unsigned int _att;
 
 };
 

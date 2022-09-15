@@ -12,6 +12,7 @@ ScavTrap::ScavTrap(void)
 	cout << GRN << "[SCAVTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = "unknown ScavTrap";
 	this->_hp = 100;
+	ClapTrap::_ep = 50;
 	this->_ep = 50;
 	this->_att = 20;
 	this->introMsg();
@@ -22,6 +23,7 @@ ScavTrap::ScavTrap(string const &name)
 	cout << GRN << "[SCAVTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = name;
 	this->_hp = 100;
+	ClapTrap::_ep = 50;
 	this->_ep = 50;
 	this->_att = 20;
 	this->introMsg();
@@ -36,6 +38,7 @@ ScavTrap::~ScavTrap(void)
 ScavTrap::ScavTrap(ScavTrap const &tocopy) : ClapTrap()
 {
 	*this = tocopy;
+	this->introMsg();
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &toassign)
@@ -47,6 +50,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &toassign)
 		this->_ep = toassign._ep;
 		this->_att = toassign._att;
 	}
+	this->introMsg();
 	return (*this);
 }
 
@@ -69,6 +73,26 @@ void	ScavTrap::byeMsg(void)
 	cout << GRN <<"This is goodbye from " << this->_name << RESET << endl;
 }
 //messages end
+
+string	const &ScavTrap::getName(void) const
+{
+	return (this->_name);
+}
+
+int		ScavTrap::getHP(void) const
+{
+	return (this->_hp);
+}
+
+int		ScavTrap::getEP(void) const
+{
+	return (this->_ep);
+}
+
+int		ScavTrap::getAtt(void) const
+{
+	return (this->_att);
+}
 
 void	ScavTrap::attack(string const &target)
 {

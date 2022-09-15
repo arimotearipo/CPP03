@@ -2,8 +2,6 @@ CC = 		c++
 
 FLAGS = 	-Wall -Wextra -Werror
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
 SRCS = 		main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 HEAD = 		ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
@@ -16,6 +14,9 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS) $(HEAD)
 			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+$(OBJS):	$(SRCS) $(MAIN) $(HEAD)
+			$(CC) $(FLAGS) $(SRCS) $(MAIN) -c
 
 clean:		
 			rm -rf $(OBJS)

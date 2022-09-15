@@ -20,8 +20,16 @@ class ScavTrap : virtual public ClapTrap
 		void	byeMsg(void);
 		//messages end
 
+		string	const &getName(void) const;
+		int		getHP(void) const;
+		int		getEP(void) const;
+		int		getAtt(void) const;
+
 		void	attack(string const &target);
 		void	guardGate(void);
+	
+	protected:
+		unsigned _ep;
 };
 
 #endif

@@ -7,19 +7,23 @@ using std::endl;
 FragTrap::FragTrap(void)
 {
 	cout << YEL << "[FRAGTRAP CONSTRUCTOR]" << RESET << " ";
-	this->_name = "Fragger Trapper";
+	this->_name = "unknown FragTrap";
+	ClapTrap::_hp = 100;
 	this->_hp = 100;
 	this->_ep = 100;
+	ClapTrap::_att = 30;
 	this->_att = 30;
 	this->introMsg();
 }
 
-FragTrap::FragTrap(string const &name)
+FragTrap::FragTrap(string const &name) : ClapTrap(name)
 {
 	cout << YEL << "[FRAGTRAP CONSTRUCTOR]" << RESET << " ";
 	this->_name = name;
+	ClapTrap::_hp = 100;
 	this->_hp = 100;
 	this->_ep = 100;
+	ClapTrap::_att = 30;
 	this->_att = 30;
 	this->introMsg();
 }

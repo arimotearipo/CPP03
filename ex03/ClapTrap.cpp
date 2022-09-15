@@ -10,9 +10,8 @@ ClapTrap::ClapTrap(void) : _name("unknown"), _hp(10), _ep(10), _att(0)
 	cout << BBLU "A ClapTrap-like machine is built" RESET << endl;
 }
 
-ClapTrap::ClapTrap(string const &name) : _hp(10), _ep(10), _att(0)
+ClapTrap::ClapTrap(string const &name) : _name(name), _hp(10), _ep(10), _att(0)
 {
-	_name = name;
 	cout << BLU << "[CLAPTRAP CONSTRUCTOR]" << RESET << " ";
 	this->introMsg();
 }

@@ -1,5 +1,6 @@
 #include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 using std::cout;
 using std::endl;
@@ -8,19 +9,20 @@ DiamondTrap::DiamondTrap(void)
 {
 	DiamondTrap::_name = "unnamed DiamondTrap";
 	ClapTrap::_name = this->_name + "_clap_name";
-	this->_hp = FragTrap::_hp;
-	this->_ep = ScavTrap::_ep;
-	this->_att = FragTrap::_att;
+	this->_hp = FragTrap::getHP();
+	this->_ep = ScavTrap::getEP();
+	this->_att = FragTrap::getAtt();
 	cout << MAG << "[DIAMONDTRAP CONSTRUCTOR]" << RESET << " ";
 	this->introMsg();
 }
 
-DiamondTrap::DiamondTrap(string const &name) : ClapTrap(name + "clap_name")
+DiamondTrap::DiamondTrap(string const &name) : ClapTrap(), ScavTrap(), FragTrap()
 {
 	this->_name = name;
-	this->_hp = FragTrap::_hp;
-	this->_ep = ScavTrap::_ep;
-	this->_att = FragTrap::_att;
+	ClapTrap::_name = name + "_clap_name";
+	this->_hp = FragTrap::getHP();
+	this->_ep = ScavTrap::getEP();
+	this->_att = FragTrap::getAtt();
 	cout << MAG << "[DIAMONDTRAP CONSTRUCTOR]" << RESET << " ";
 	this->introMsg();
 }
@@ -56,11 +58,6 @@ void	DiamondTrap::byeMsg(void)
 {
 	cout << MAG << "[byeMsg()]" << RESET << " ";
 	cout << MAG << this->_name << " just got destroyed" << RESET << endl;
-}
-
-string	const &DiamondTrap::getName(void) const
-{
-	return (this->_name);
 }
 
 string	const &DiamondTrap::getClapName(void) const
