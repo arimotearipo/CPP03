@@ -24,7 +24,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		string	const &getClapName(void) const;
 		// getters end
 
-		using ScavTrap::attack; // does nothing
+		// using ScavTrap::attack; // does nothing
 
 		// special capacity
 		void	whoAmI(void);

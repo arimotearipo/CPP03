@@ -33,7 +33,7 @@ ScavTrap::~ScavTrap(void)
 	this->byeMsg();
 }
 
-ScavTrap::ScavTrap(ScavTrap const &tocopy)
+ScavTrap::ScavTrap(ScavTrap const &tocopy) : ClapTrap()
 {
 	*this = tocopy;
 }

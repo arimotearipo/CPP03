@@ -30,7 +30,7 @@ FragTrap::~FragTrap(void)
 	this->byeMsg();
 }
 
-FragTrap::FragTrap(FragTrap const &tocopy)
+FragTrap::FragTrap(FragTrap const &tocopy) : ClapTrap()
 {
 	*this = tocopy;
 	this->introMsg();

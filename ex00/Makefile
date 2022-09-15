@@ -19,6 +19,9 @@ all:		$(NAME)
 $(NAME):	$(SRCS) $(HEAD)
 			$(CC) $(FLAGS) $(SRCS) -o $(NAME)
 
+$(OBJS):	$(SRCS) $(MAIN) $(HEAD)
+			$(CC) $(SRCS) $(MAIN) $(FLAGS) -c
+
 clean:		
 			rm -rf $(OBJS)
 

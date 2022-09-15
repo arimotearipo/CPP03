@@ -19,9 +19,6 @@ class FragTrap : virtual public ClapTrap
 
 		void	highFiveGuys(void);
 
-	protected:
-		int		_hp;
-		int		_attack_dmg;
 };
 
 #endif

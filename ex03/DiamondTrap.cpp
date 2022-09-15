@@ -15,10 +15,9 @@ DiamondTrap::DiamondTrap(void)
 	this->introMsg();
 }
 
-DiamondTrap::DiamondTrap(string const &name)
+DiamondTrap::DiamondTrap(string const &name) : ClapTrap(name + "clap_name")
 {
-	DiamondTrap::_name = name;
-	ClapTrap::_name = name + "_clap_name";
+	this->_name = name;
 	this->_hp = FragTrap::_hp;
 	this->_ep = ScavTrap::_ep;
 	this->_att = FragTrap::_att;
@@ -32,7 +31,7 @@ DiamondTrap::~DiamondTrap(void)
 	this->byeMsg();
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &tocopy)
+DiamondTrap::DiamondTrap(DiamondTrap const &tocopy) : ClapTrap(), ScavTrap(), FragTrap()
 {
 	*this = tocopy;
 }
